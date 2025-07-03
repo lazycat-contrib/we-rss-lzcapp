@@ -1,0 +1,23 @@
+name: WeRSS
+package: community.lazycat.app.we-rss
+version: 1.4.2
+description: 高效订阅微信公众号，微信公众号订阅，更新最新文章，并生成RSS书签，支持Webhook/API接入
+homepage: https://github.com/rachelos/we-mp-rss
+author: rachelos
+application:
+    subdomain: we-rss
+    background_task: true
+    public_path:
+        - /
+    routes:
+        - /=http://we-rss:8001
+services:
+    we-rss:
+        # rachelos/we-mp-rss:latest
+        image: registry.lazycat.cloud/czyt/rachelos/we-mp-rss:373c6c1b3f1826d8
+        environment:
+            - DB=sqlite:///app/data/db.db
+            - USERNAME=admin
+            - PASSWORD=admin
+        binds:
+            - /lzcapp/var/data:/app/data
