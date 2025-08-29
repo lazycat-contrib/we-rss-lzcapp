@@ -1,0 +1,22 @@
+params:
+    - id: auth_user
+      type: string
+      name: "auth user"
+      default: "admin"
+      description: "user name for login"
+
+    - id: auth_pass
+      type: string
+      name: "user password"
+      default: "admin"
+      description: "user password for login"
+
+locales:
+    zh:
+        auth_user:
+            name: "认证用户"
+            description: "登录用户的用户名"
+
+        auth_pass:
+            name: "认证密码"
+            description: "登录用户的密码"
