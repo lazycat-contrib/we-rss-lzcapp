@@ -1,0 +1,18 @@
+application:
+  subdomain: we-rss
+  background_task: true
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://we-rss:8001/
+services:
+  we-rss:
+    # upstream: ghcr.io/rachelos/we-mp-rss:latest
+    image: registry.lazycat.cloud/czyt/rachelos/we-mp-rss:444207e3385ef3d2
+    environment:
+      - DB=sqlite:///data/db.db
+      - USERNAME={{.U.auth_user}}
+      - PASSWORD={{.U.auth_pass}}
+    binds:
+      - /lzcapp/var/data:/app/data

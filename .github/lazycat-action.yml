@@ -1,0 +1,47 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/we-rss.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: we-rss
+    bump: patch
+
+build:
+  run_buildscript: false
+
+images:
+  - id: we-rss
+    target: service
+    service: we-rss
+    source: ghcr.io/rachelos/we-mp-rss
+    channel: custom
+    sort: created
+    tag_regex: '^latest$'
+    delivery:
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    create_if_missing: true
+    changelog_locales: [zh, en]
+    application:
+      language: zh
+      name: WeRSS
+      source: https://github.com/rachelos/we-mp-rss
+      source_author: rachelos
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: WeRSS
+    summary: WeRSS 的 LazyCat 自动构建版本

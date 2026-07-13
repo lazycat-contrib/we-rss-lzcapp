@@ -1,0 +1,15 @@
+name: WeRSS
+package: community.lazycat.app.we-rss
+version: 1.4.6
+min_os_version: 1.5.0
+description: "微信公众号 RSS 订阅助手"
+license: MIT
+homepage: https://github.com/rachelos/we-mp-rss
+author: rachelos
+locales:
+  en:
+    name: "WeRSS"
+    description: "WeChat public account RSS subscription assistant"
+  zh:
+    name: "WeRSS"
+    description: "微信公众号 RSS 订阅助手"

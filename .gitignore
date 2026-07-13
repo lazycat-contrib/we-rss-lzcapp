@@ -1,0 +1,4 @@
+*.lpk
+dist/
+.lazycat-action/
+.lzc-dtl-cache.json
