@@ -1,6 +1,6 @@
 name: WeRSS
 package: community.lazycat.app.we-rss
-version: 1.4.6
+version: 1.4.7
 min_os_version: 1.5.0
 description: "微信公众号 RSS 订阅助手"
 license: MIT

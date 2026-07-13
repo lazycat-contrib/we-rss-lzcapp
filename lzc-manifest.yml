@@ -8,8 +8,8 @@ application:
       backend: http://we-rss:8001/
 services:
   we-rss:
-    # upstream: ghcr.io/rachelos/we-mp-rss:latest
-    image: registry.lazycat.cloud/czyt/rachelos/we-mp-rss:444207e3385ef3d2
+    # upstream: ghcr.io/rachelos/we-mp-rss:latest@sha256:1b7f126836bab9e726207756f6483d4771a7405fa35b5d044c64901eeb79e2d7
+    image: registry.lazycat.cloud/czyt/rachelos/we-mp-rss:413eadcea1f58f01
     environment:
       - DB=sqlite:///data/db.db
       - USERNAME={{.U.auth_user}}
